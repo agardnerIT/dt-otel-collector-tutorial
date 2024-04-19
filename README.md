@@ -1,5 +1,7 @@
 # dt-otel-collector-tutorial
 
+> Note: This should be moved to a Dynatrace owned repo and the shortcut link should be updated to point to the new endpoint
+
 ## Create an Access Token
 
 - Press `Ctrl + k` to bring up the search box.
