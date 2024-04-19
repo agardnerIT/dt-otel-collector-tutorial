@@ -15,7 +15,10 @@ Towards the bottom of the screen, you should see an empty terminal prompt like t
 
 ![terminal window](.devcontainer/images/terminal-window.png)
 
+Soon after the codespace starts, you should see this in the terminal window. Wait until it says "Done".
 While you are waiting, you can proceed to the next step to create an access token.
+
+![post creation workflow](.devcontainer/images/post-create.png)
 
 ## Create an Access Token
 
