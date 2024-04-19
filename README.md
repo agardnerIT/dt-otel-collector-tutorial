@@ -34,7 +34,7 @@ helm repo update
 
 ## Configure and Install Dynatrace OpenTelemetry Collector
 
-The OpenTelemetry collector requires a configuration file. This is already available in the environment. See collector-values.yaml
+The OpenTelemetry collector requires a configuration file. This is already available in the environment. See [collector-values.yaml](collector-values.yaml)
 
 You do not need to modify this file.
 
@@ -51,3 +51,35 @@ kubectl get pods
 ```
 
 Wait and periodically re-run `kubectl get pods` until the Pod is `Running`.
+
+## Install OpenTelemetry Demo
+
+Use Helm to install the OpenTelemetry demo system, passing the configuration file (already created for you - see [otel-demo-values.yaml](otel-demo-values.yaml)).
+
+```
+helm upgrade -i my-otel-demo open-telemetry/opentelemetry-demo -f otel-demo-values.yaml
+```
+
+The Pods may take 2-3 minutes to start, but running `kubectl get pods` should eventually show the pods running.
+
+## Access The Demo User Interface
+
+Note: This step is optional because there is a load generator already running. Observability data will be flowing into Dynatrace.
+
+Expose the user interface on port 8080 by port-forwarding:
+
+```
+kubectl -n default port-forward sv/my-otel-demo-frontendproxy 8080:8080
+```
+
+Open a browser and go to `http://localhost:8080`
+
+## Query Observability Data
+
+In Dynatrace, press `Ctrl + k` again and search for `Notebooks`.
+
+Create a new notebook and add a new section exploring the logs.
+
+Add a new section and choose `Query Grail`. This section type allows you to write your own Dynatrace Query Language (DQL) to have full control over the data you retrieve.
+
+Type: `fetch spans` in the DQL box and execute the query.
