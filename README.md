@@ -2,6 +2,21 @@
 
 > Note: This should be moved to a Dynatrace owned repo and the shortcut link should be updated to point to the new endpoint
 
+## Start Demo
+
+1. Sign into GitHub.com then click the `Code` button.
+1. Select the `Codespaces` tab
+1. Click "Create codespace on main"
+
+![create codespace](.devcontainer/images/create-codespace.png)
+
+Wait for the system to start. A new browser window will be created and a Kubernetes cluster will be installed for you.
+Towards the bottom of the screen, you should see an empty terminal prompt like this:
+
+![terminal window](.devcontainer/images/terminal-window.png)
+
+While you are waiting, you can proceed to the next step to create an access token.
+
 ## Create an Access Token
 
 - Press `Ctrl + k` to bring up the search box.

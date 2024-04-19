@@ -30,8 +30,7 @@ echo "[post-create] start" >> ~/status
 #python3 cluster_installer.py
 
 # Install
-#kind delete cluster
-#kind create cluster --config .devcontainer/kind-cluster.yml --wait 300s
+kind create cluster --config .devcontainer/kind-cluster.yml --wait 300s
 #chmod +x .devcontainer/deployment.sh && .devcontainer/deployment.sh
 
 echo "[post-create] complete" >> ~/status
